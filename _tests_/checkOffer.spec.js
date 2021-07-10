@@ -21,12 +21,22 @@ describe('the offer calculator', function() {
 	});
 
     describe('when there is a matching offer', function() {
-		it('should calculate offer price and remaining untotalled items', function() {
+		it('should calculate offer price for A and remaining untotalled items', function() {
 			//A is 50 each the offer is 3 for 130
 			addOffer('A',3,130);
 			var result = getOfferTotal('A', 4);
 			expect(result).toEqual({
 				offerTotal:130,
+				unmatchedItems:1
+			});
+		});
+
+        it('should calculate offer price for B and remaining untotalled items', function() {
+			//B is 30 each the offer is 2 for 45
+			addOffer('B',2,45);
+			var result = getOfferTotal('B', 3);
+			expect(result).toEqual({
+				offerTotal:45,
 				unmatchedItems:1
 			});
 		});
