@@ -1,6 +1,6 @@
 import { calculate } from './prices';
 
-function ShoppingCart() {
+export function ShoppingCart() {
 	this.items = {};
 }
 
